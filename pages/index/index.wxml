@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container" >
+<text>qqqq</text>
+    <view class="imageContainer" 
+          id="container"
+          bind:touchstart="touchstart" 
+          bind:touchend="touchend"
+          bind:touchmove="touchmove">
+    <image class="image" src="../../image/1.png"></image>
+    <view class="contorler {{touching?'touching':''}}" 
+          id="redDot"
+          style="top:{{dotTop+'px'}};left:{{dotLeft+'px'}};">
+    </view>
+    <image 
+    class="rotateObj"
+    id='cat' 
+    src="../../image/1.png"
+    style="top:{{imageTop+'px'}};left:{{imageLeft+'px'}};transform:rotate({{rotate+'deg'}}) scale({{scale}})"
+    ></image>
+    </view>
+</view>

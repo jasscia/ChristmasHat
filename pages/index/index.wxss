@@ -1,0 +1,47 @@
+
+.slider1{
+  flex:1
+}
+.slidercontainer{
+  margin-top:5rpx;
+  width:100%;
+  font-size:14px;
+  align-items:center;
+  display:flex;
+}
+.savebt{
+  height:30px;
+  font-size:14px
+}
+.imageContainer{
+  height:300px;
+  width:300px;
+
+}
+.image{
+  position: absolute;
+  z-index:0;
+  height: 300px;
+  width:300px;
+  border: solid 2px red;
+}
+.rotateObj{ 
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  border: dashed 2px yellow;
+}
+.contorler{
+  position: absolute;
+  z-index: 1;
+  width:20px;
+  height:20px;
+  border-radius:10px;
+  background:green;
+  /* top:90px;
+  left:130px; */
+  /* transform:translateX(-50%); */
+}
+.touching{
+  background:grey;
+}
