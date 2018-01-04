@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/imageeditor/imageeditor",
-    "pages/logs/logs"
+    "pages/imageeditor/imageeditor"
   ],
   "window": {
     "backgroundTextStyle": "light",
