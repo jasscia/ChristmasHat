@@ -5,8 +5,6 @@ const app = getApp()
 Page({
   data: {
     bgPic:null,
-    imageResource:"",
-    combine:false,
     imgList:[1,2,3,4,5,6,7,8,9,10],
     currentHatId:1,
 

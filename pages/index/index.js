@@ -35,10 +35,10 @@ Page({
             userInfo: res.userInfo,
             bgPic: res.userInfo.avatarUrl
           });
+          this.assignPicChoosed();
         }
       })
     }
-    this.assignPicChoosed();
   },
   chooseImage(from){
     wx.chooseImage({
@@ -47,16 +47,15 @@ Page({
       sourceType: [from.target.dataset.way],
       success:(res)=> {
         var tempFilePaths = res.tempFilePaths;
-        console.log(tempFilePaths);
         this.setData({
           bgPic:res.tempFilePaths[0]
         });
         this.assignPicChoosed();
       },
-      fail: function (res) {
+      fail: (res)=>{
         this.assignPicChoosed();
         },
-      complete: function (res) {
+      complete: (res)=>{
         this.assignPicChoosed();
         },
     })
