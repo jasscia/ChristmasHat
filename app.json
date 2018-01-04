@@ -1,12 +1,13 @@
 {
-  "pages":[
-    "pages/imageeditor/index",
+  "pages": [
+    "pages/index/index",
+    "pages/imageeditor/imageeditor",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "我要圣诞帽",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

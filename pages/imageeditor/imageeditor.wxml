@@ -6,7 +6,7 @@
           bind:touchstart="touchStart" 
           bind:touchend="touchEnd"
           bind:touchmove="touchMove">
-    <image class="bg" src="{{userInfo.avatarUrl}}" bind:tap="getSize"></image>
+    <image class="bg" src="{{bgPic}}"></image>
     <icon type="cancel" class="cancel" id="cancel"
             style="top:{{cancelCenterY-10+'px'}};left:{{cancelCenterX-10+'px'}}"></icon>
     <icon type="waiting" class="handle"  id="handle"  color="green"

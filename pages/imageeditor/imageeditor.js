@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    userInfo: {},
+    bgPic:null,
     imageResource:"",
     combine:false,
     imgList:[1,2,3,4,5,6,7,8,9,10],
@@ -22,25 +22,12 @@ Page({
     scale:1,
     rotate:0
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        combine:false
-      })
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo
-          })
-        }
-      })
-    }
-  },
+  onLoad(){
+    this.setData({
+      bgPic: app.globalData.bgPic
+    })
+    },
+  
   onReady(){
     this.hat_center_x=this.data.hatCenterX;
     this.hat_center_y=this.data.hatCenterY;
@@ -125,7 +112,7 @@ Page({
       combine:true
     });
     wx.getImageInfo({
-      src: this.data.userInfo.avatarUrl,
+      src: this.data.bgPic,
       success:res=>{
         this.setData({
           imageResource:res.path
