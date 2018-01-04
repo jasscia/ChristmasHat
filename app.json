@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/imageeditor/imageeditor"
+    "pages/imageeditor/imageeditor",
+    "pages/combine/combine"
   ],
   "window": {
     "backgroundTextStyle": "light",

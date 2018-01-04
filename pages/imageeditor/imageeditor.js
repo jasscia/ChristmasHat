@@ -91,14 +91,14 @@ Page({
           cancelCenterX:2*this.data.hatCenterX-this.data.handleCenterX,
           cancelCenterY:2*this.data.hatCenterY-this.data.handleCenterY
         });
-        var diff_x_before=this.handle_center_x-this.hat_center_x;
-        var diff_y_before=this.handle_center_y-this.hat_center_y;
-        var diff_x_after=this.data.handleCenterX-this.hat_center_x;
-        var diff_y_after=this.data.handleCenterY-this.hat_center_y;
-        var distance_before=Math.sqrt(diff_x_before*diff_x_before+diff_y_before*diff_y_before);
-        var distance_after=Math.sqrt(diff_x_after*diff_x_after+diff_y_after*diff_y_after);
-        var angle_before=Math.atan2(diff_y_before,diff_x_before)/Math.PI*180;
-        var angle_after=Math.atan2(diff_y_after,diff_x_after)/Math.PI*180;
+        let diff_x_before=this.handle_center_x-this.hat_center_x;
+        let diff_y_before=this.handle_center_y-this.hat_center_y;
+        let diff_x_after=this.data.handleCenterX-this.hat_center_x;
+        let diff_y_after=this.data.handleCenterY-this.hat_center_y;
+        let distance_before=Math.sqrt(diff_x_before*diff_x_before+diff_y_before*diff_y_before);
+        let distance_after=Math.sqrt(diff_x_after*diff_x_after+diff_y_after*diff_y_after);
+        let angle_before=Math.atan2(diff_y_before,diff_x_before)/Math.PI*180;
+        let angle_after=Math.atan2(diff_y_after,diff_x_after)/Math.PI*180;
         this.setData({
           scale:distance_after/distance_before*this.scale,
           rotate:angle_after-angle_before+this.rotate,
@@ -107,60 +107,22 @@ Page({
       this.start_x=current_x;
       this.start_y=current_y;
   },
-  combinePic(e){
-    this.setData({
-      combine:true
-    });
-    wx.getImageInfo({
-      src: this.data.bgPic,
-      success:res=>{
-        this.setData({
-          imageResource:res.path
-        });
-        this.draw();
-      }
-    })
-  },
-  draw(){
-    const pc=wx.createCanvasContext('myCanvas');
-    const windowWidth=wx.getSystemInfoSync().windowWidth;
-    const hat_size=this.data.hatSize*this.scale;
-
-
-    pc.clearRect(0, 0, windowWidth, 300);
-    pc.drawImage(this.data.imageResource,windowWidth/2-150,0,300,300);
-    pc.translate(this.hat_center_x,this.hat_center_y);
-    pc.rotate(this.rotate* Math.PI / 180);
-    pc.drawImage("../../image/"+this.data.currentHatId+".png",-hat_size/2,-hat_size/2,hat_size,hat_size);
-    pc.draw();
-  },
-  savePic(){
-    const windowWidth = wx.getSystemInfoSync().windowWidth;
-    wx.canvasToTempFilePath({
-      x: windowWidth / 2 - 150,
-      y:0,
-      height:300,
-      width:300,
-      canvasId: 'myCanvas',
-      success:  (res) =>{
-        wx.saveImageToPhotosAlbum({
-          filePath: res.tempFilePath,
-          success:(res)=> {
-            this.setData({
-              combine:false
-            })
-          }, fail(e) {
-            console.log("err:"+e);
-          }
-        })
-      }
-    });
-  },
+  
 
   chooseImg(e){
     console.log(e);
     this.setData({
       currentHatId:e.target.dataset.hatId
+    })
+  },
+  combinePic(){
+    app.globalData.scale=this.scale;
+    app.globalData.rotate = this.rotate;
+    app.globalData.hat_center_x = this.hat_center_x;
+    app.globalData.hat_center_y = this.hat_center_y;
+    app.globalData.currentHatId = this.data.currentHatId;
+    wx.navigateTo({
+      url: '../combine/combine',
     })
   }
 })

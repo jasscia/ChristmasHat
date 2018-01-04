@@ -8,5 +8,5 @@
   <button data-way="avatar" bind:tap="getAvatar">使用头像</button>
   <button data-way="camera" bind:tap="chooseImage">使用相机</button>
   <button data-way="album" bind:tap="chooseImage">相册选择</button>
-  <button bind:tap="nextPage">下一步</button>
+  <button bind:tap="nextPage" disabled="{{!picChoosed}}">下一步</button>
 </view>
