@@ -12,15 +12,15 @@
 * project.config.json
 ## 过程展示
 ##### step 1  旋转底图
-![step1](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step1.jpg)
+>>>>>![step1](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step1.jpg)
 ##### step 2 确定底图后 进入下一步
-![step2](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step2.jpg)
+>>>>>![step2](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step2.jpg)
 ##### step 3 选择帽子 调整帽子 确定进入下一步
-![step3](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step3.jpg)
+>>>>>![step3](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step3.jpg)
 ##### step 4 canvas绘制合成图 并保存至相册
-![step4](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step4.jpg)
+>>>>>![step4](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/step4.jpg)
 ##### 最终成果 
-![成果图](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/avatarWithHat.png)
+>>>>>![成果图](https://github.com/jasscia/ChristmasHat/raw/master/shortcut/avatarWithHat.png)
 ## 核心算法介绍
 * 核心算法1:怎么实现 帽子的实时转动
    * 当touchstart时，保存此时的touch起始点，并以此时的底图和帽子位置作为旋转角度和缩放比例值计算的参考点
