@@ -26,6 +26,7 @@ Page({
       this.setData({
         bgPic: app.globalData.userInfo.avatarUrl,
       });
+      this.assignPicChoosed();
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
